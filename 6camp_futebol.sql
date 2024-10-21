@@ -24,16 +24,17 @@ CREATE TABLE participa(
 );
 
 CREATE TABLE joga(
+    id_joga INTEGER PRIMARY KEY AUTOINCREMENT,
     id_jogador INT REFERENCES jogador(id_jogador),
     id_partida INT REFERENCES partida(id_partida),
     gol INT,
-    PRIMARY KEY (id_partida,id_jogador)
+    PRIMARY KEY (id_partida,id_jogador, id_joga)
 );
 
 CREATE TABLE cartao(
     id_cartao INTEGER PRIMARY KEY AUTOINCREMENT,
-    cor VARCHAR(8),
-    id_jogador INT REFERENCES jogador(id_jogador)
+    id_joga INT REFERENCES joga(id_joga),
+    cor VARCHAR(8)
 );
 
 -- Inserir 15 linhas na tabela 'equipe'
@@ -54,21 +55,21 @@ INSERT INTO equipe (nome) VALUES ('Sport');
 INSERT INTO equipe (nome) VALUES ('Fortaleza');
 
 -- Inserir 15 linhas na tabela 'cartao'
-INSERT INTO cartao (cor, id_jogador) VALUES ('Amarelo', 1);
-INSERT INTO cartao (cor, id_jogador) VALUES ('Vermelho', 2);
-INSERT INTO cartao (cor, id_jogador) VALUES ('Amarelo', 3);
-INSERT INTO cartao (cor, id_jogador) VALUES ('Vermelho', 4);
-INSERT INTO cartao (cor, id_jogador) VALUES ('Amarelo', 5);
-INSERT INTO cartao (cor, id_jogador) VALUES ('Vermelho', 6);
-INSERT INTO cartao (cor, id_jogador) VALUES ('Amarelo', 7);
-INSERT INTO cartao (cor, id_jogador) VALUES ('Vermelho', 8);
-INSERT INTO cartao (cor, id_jogador) VALUES ('Amarelo', 9);
-INSERT INTO cartao (cor, id_jogador) VALUES ('Vermelho', 10);
-INSERT INTO cartao (cor, id_jogador) VALUES ('Amarelo', 11);
-INSERT INTO cartao (cor, id_jogador) VALUES ('Vermelho', 12);
-INSERT INTO cartao (cor, id_jogador) VALUES ('Amarelo', 13);
-INSERT INTO cartao (cor, id_jogador) VALUES ('Vermelho', 14);
-INSERT INTO cartao (cor, id_jogador) VALUES ('Amarelo', 15);
+INSERT INTO cartao (cor, id_joga) VALUES ('Amarelo', 1);
+INSERT INTO cartao (cor, id_joga) VALUES ('Vermelho', 2);
+INSERT INTO cartao (cor, id_joga) VALUES ('Amarelo', 3);
+INSERT INTO cartao (cor, id_joga) VALUES ('Vermelho', 4);
+INSERT INTO cartao (cor, id_joga) VALUES ('Amarelo', 5);
+INSERT INTO cartao (cor, id_joga) VALUES ('Vermelho', 6);
+INSERT INTO cartao (cor, id_joga) VALUES ('Amarelo', 7);
+INSERT INTO cartao (cor, id_joga) VALUES ('Vermelho', 8);
+INSERT INTO cartao (cor, id_joga) VALUES ('Amarelo', 9);
+INSERT INTO cartao (cor, id_joga) VALUES ('Vermelho', 10);
+INSERT INTO cartao (cor, id_joga) VALUES ('Amarelo', 11);
+INSERT INTO cartao (cor, id_joga) VALUES ('Vermelho', 12);
+INSERT INTO cartao (cor, id_joga) VALUES ('Amarelo', 13);
+INSERT INTO cartao (cor, id_joga) VALUES ('Vermelho', 14);
+INSERT INTO cartao (cor, id_joga) VALUES ('Amarelo', 15);
 
 
 -- Inserir 15 linhas na tabela 'partida'
